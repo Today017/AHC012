@@ -203,16 +203,29 @@ long getScore()
 
 long _getScore()
 {
-	
 	long res = 0;
 	return 0;
+}
+
+void printLastScore()
+{
+	k = __k;
+	for (int i = 0; i < __k; i++)
+	{
+		PX[i] = __PX[i];
+		PY[i] = __PY[i];
+		QX[i] = __QX[i];
+		QY[i] = __QY[i];
+	}
+
+	cerr << getScore() << '\n';
 }
 
 void solve()
 {
 	clock_t start = clock();
-
 	long now = getScore();
+
 	while (nowTime <= TIME_LIMIT)
 	{
 		makek();
@@ -229,7 +242,6 @@ void solve()
 
 		double temp = TEMP;
 		double prob = exp(min(0.0, (nex - now) / temp));
-		// double prob = exp(min(0.0, (now - nex) / temp));
 
 		if (1.0*(xor128()%10000/10000) < prob)
 		{
@@ -248,21 +260,11 @@ void output()
 	cout << __k << '\n';
 	for (int i = 0; i < __k; i++)
 		cout << __PX[i] << ' ' << __PY[i] << ' ' << __QX[i] << ' ' << __QY[i] << '\n';
-
-	k = __k;
-	for (int i = 0; i < __k; i++)
-	{
-		PX[i] = __PX[i];
-		PY[i] = __PY[i];
-		QX[i] = __QX[i];
-		QY[i] = __QY[i];
-	}
-
-	cerr << getScore() << '\n';
 }
 
-void debug()
+void printGraph()
 {
+	// to out.txt and graph_show.py
 	cout << Count << '\n';
 	for (int i = 0; i < Count; i++)
 		cout << Score[i] << " \n"[i == Count-1];
@@ -275,6 +277,7 @@ int main()
 	init();
 	solve();
 	// output();
-	debug();
+	printLastScore();
+	printGraph();
 	return 0;
 }
