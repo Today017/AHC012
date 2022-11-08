@@ -279,8 +279,8 @@ int main()
 	cin.tie(0);
 	init();
 	solve();
-	// output();
-	printLastScore();
-	printGraph();
+	output();
+	// printLastScore();
+	// printGraph();
 	return 0;
 }
