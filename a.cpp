@@ -4,6 +4,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// https://atcoder.jp/contests/ahc012/tasks/ahc012_a
+// https://img.atcoder.jp/ahc012/f756367b32.html?lang=ja
+
 #define nowTime 1.0 * (clock() - start) / CLOCKS_PER_SEC
 #define TEMP 30.0 - 28.0 * nowTime / TIME_LIMIT
 #define TIME_LIMIT 2.98
